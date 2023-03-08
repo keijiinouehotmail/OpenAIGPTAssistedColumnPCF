@@ -30,6 +30,10 @@ export class GPTService {
             frequency_penalty: 0,
             presence_penalty: 0.6,
             messages: [{
+                "role": "system",
+                "content": "You are a helpful assistant.",
+            },
+            {
                 "role": "user",
                 "content": this.qsFilled,
             }],

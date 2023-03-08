@@ -155,7 +155,7 @@
     <comment>In manifest</comment>
   </data>
     <data name="querySentence_Desc_Key" xml:space="preserve">
-    <value>GPT に尋ねる文章。例えば - 会社としての ${} の強みは何ですか？ キーワードを含む列の値を ${} にて指定します。</value>
+    <value>GPT に尋ねる文章。例えば - 会社としての ${} の強みは何ですか？ 上で設定したキーワードを含む列の値を ${} にて指定します。</value>
     <comment>In manifest</comment>
   </data>
     <data name="apiKeyOpenAI_Display_Key" xml:space="preserve">

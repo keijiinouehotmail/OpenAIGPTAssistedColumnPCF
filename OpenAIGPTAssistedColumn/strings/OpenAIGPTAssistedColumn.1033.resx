@@ -155,7 +155,7 @@
     <comment>In manifest</comment>
   </data>
     <data name="querySentence_Desc_Key" xml:space="preserve">
-    <value>The query sentence for GPT such as - What is strengths of ${} as a company? Pleaes use ${} to represent the text of the Keyword fiecolumnld you set.</value>
+    <value>The query sentence for GPT such as - What is strengths of ${} as a company? Pleaes use ${} to represent the text of the Keyword field you set above.</value>
     <comment>In manifest</comment>
   </data>
     <data name="apiKeyOpenAI_Display_Key" xml:space="preserve">

@@ -1,5 +1,13 @@
 # How to install and configure OpenAI GPT Assisted Column
 
+## Prerequisite
+
+- You have an OpenAI account in order to get API key.  
+- You have a Dataverse environment for which you can customize.  
+- You have a model-driven app.  
+
+## Installation and configuration
+
 1. Install the solution
 
     Install the solution file which includes the PCF control to your Dataverse or Dynamics 365 environment.  

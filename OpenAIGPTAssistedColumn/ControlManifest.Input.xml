@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="OpenAIGPTAssistedColumnNS" constructor="OpenAIGPTAssistedColumn"
+    version="1.0.0"
+    display-name-key="OpenAIGPTAssistedColumn_Display_Key"
+    description-key="OpenAIGPTAssistedColumn_Desc_Key"
+    control-type="virtual">
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <!-- property node identifies a specific, configurable piece of data that the control expects
+    from CDS -->
+    <property name="assistedColumn" display-name-key="Assisted assistedColumn_Display_Key"
+      description-key="assistedColumn_Desc_Key" of-type="Multiple"
+      usage="bound" required="true" />
+    <property name="keyword" display-name-key="keyword_Display_Key"
+      description-key="keyword_Desc_Key"
+      of-type-group="kindOfText" usage="input" required="true" />
+    <type-group name="kindOfText">
+      <type>SingleLine.Text</type>
+      <type>SingleLine.TextArea</type>
+    </type-group>
+    <property name="querySentence" display-name-key="querySentence_Display_Key"
+      description-key="querySentence_Desc_Key"
+      of-type="SingleLine.Text" usage="input" required="true"
+      default-value="What is strengths of ${} as a company?" />
+    <property name="apiKeyOpenAI" display-name-key="apiKeyOpenAI_Display_Key"
+      description-key="apiKeyOpenAI_Desc_Key"
+      of-type="SingleLine.Text" usage="input" required="false" />
+    <!-- Not yet implemented
+      <property name="apiKeyAzureOpenAI" display-name-key="API key for Azure OpenAI API"
+      description-key="The API key of your Azure OpenAI API account."
+      of-type="SingleLine.Text" usage="input" required="false" /> 
+    -->
+
+    <resources>
+      <code path="index.ts" order="1" />
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+      <resx path="strings/OpenAIGPTAssistedColumn.1033.resx" version="1.0.0" />
+      <resx path="strings/OpenAIGPTAssistedColumn.1041.resx" version="1.0.0" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/OpenAIGPTAssistedColumn.css" order="1" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>

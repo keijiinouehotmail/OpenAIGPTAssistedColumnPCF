@@ -11,6 +11,7 @@ export interface IAssistedColumnReactProps {
   // apiKeyAzureOpenAI?: string; // Not yet implemented
   context: ComponentFramework.Context<IInputs>;
   onApply?: (newValue: string) => void;
+  version: string;
 }
 
 export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(function AssistedColumnReactMemo(props: IAssistedColumnReactProps) {
@@ -74,12 +75,20 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
         <a ref={linkRef} onClick={onShowContextualMenu} href="#" style={{ position: 'absolute', right: '0' }}>
           {props.context.resources.getString('About')}</a>
         <ContextualMenu
-          items={[{
-            key: 'linkWithTarget',
-            text: props.context.resources.getString('Webpageofthiscontrol'),
-            href: 'https://github.com/keijiinouehotmail/OpenAIGPTAssistedColumnPCF',
-            target: '_blank',
-          },]}
+          items={[
+            {
+              key: 'disabled',
+              text: `v${props.version}`,
+              disabled: true,
+              onClick: () => console.error('Disabled item should not be clickable.'),
+            },
+            {
+              key: 'linkWithTarget',
+              text: props.context.resources.getString('Webpageofthiscontrol'),
+              href: 'https://github.com/keijiinouehotmail/OpenAIGPTAssistedColumnPCF',
+              target: '_blank',
+            },
+          ]}
           hidden={!showContextualMenu}
           target={linkRef}
           onItemClick={onHideContextualMenu}

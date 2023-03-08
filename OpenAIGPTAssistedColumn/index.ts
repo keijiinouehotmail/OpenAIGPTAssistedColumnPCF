@@ -3,6 +3,7 @@ import * as React from "react";
 import { AssistedColumnReact, IAssistedColumnReactProps } from "./AssistedColumnReact";
 
 export class OpenAIGPTAssistedColumn implements ComponentFramework.ReactControl<IInputs, IOutputs> {
+    private version = "1.0.3";
     private theComponent: ComponentFramework.ReactControl<IInputs, IOutputs>;
     private notifyOutputChanged: () => void;
     private _value: string | undefined;
@@ -41,6 +42,7 @@ export class OpenAIGPTAssistedColumn implements ComponentFramework.ReactControl<
             apiKeyOpenAI: context.parameters.apiKeyOpenAI.raw?.toString() || '',
             context: context,
             onApply: this.onApply.bind(this),
+            version: this.version,
         };
         return React.createElement(
             AssistedColumnReact, props

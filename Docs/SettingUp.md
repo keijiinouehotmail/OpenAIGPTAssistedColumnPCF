@@ -11,7 +11,7 @@
 1. Install the solution
 
     Install the solution file which includes the PCF control to your Dataverse or Dynamics 365 environment.  
-    You can the latest managed solution file (.zip) [here in this repository](https://github.com/keijiinouehotmail/OpenAIGPTAssistedColumnPCF/releases).
+    You can download the latest managed solution file (.zip) [here in this repository](https://github.com/keijiinouehotmail/OpenAIGPTAssistedColumnPCF/releases).
 
 1. Creating new column
 

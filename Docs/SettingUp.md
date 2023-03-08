@@ -45,6 +45,9 @@
             You can change the default value for your usage.  
             Use ${} as a placeholder to represent the text of the **Keyword** field you set above.  
 
+            - Default value: "What is strengths of **${}** as a company?"
+            - The query sentence for GPT will be: "What is strengths of **Microsoft** as a company?", when Keyword is set as "name" in account table and the value is "Microsoft".
+
             ![Property Query sentence](../Images/ConfigureThePCFControlPropQuerySentence.png)
 
         1. **API key for OpenAI API**

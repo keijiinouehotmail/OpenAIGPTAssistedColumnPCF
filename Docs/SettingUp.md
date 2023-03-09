@@ -31,7 +31,7 @@
 
 1. Configure the PCF control
     1. Go to the classic Form Designer in Power Apps
-    1. Double click the field (or column) which you created above to show the "Field Properties" dialog
+    1. Double click the field (or column) which you added above to show the "Field Properties" dialog
     1. Click "Controls" tab
     1. Click "Add Control..." link
     1. Scroll down to find "**OpenAIGPTAssistedColumn**" and click it

@@ -3,7 +3,7 @@ $SolutionVersion = ((Get-Content .\OpenAIGPTAssistedColumn\Solutions\src\Other\S
 $message = @('-> Solution Version', $SolutionVersion) -join ' = '
 echo $message
 
-$ManifestVersion = ((Get-Content .\OpenAIGPTAssistedColumn\ControlManifest.Input.xml | Select-String -Pattern 'version="')[1] -replace '^ *version="', '') -replace '[^0-9\.]', ''
+$ManifestVersion = ((Get-Content .\OpenAIGPTAssistedColumn\ControlManifest.Input.xml | Select-String -Pattern 'version')[1] -replace '^ *version', '') -replace '[^0-9\.]', ''
 $message = @('-> Manifest Version', $ManifestVersion) -join ' = '
 echo $message
 

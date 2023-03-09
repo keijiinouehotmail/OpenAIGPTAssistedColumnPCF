@@ -47,7 +47,7 @@
         1. **Keyword**
 
             This is for a keyword used in Query sentence later.  
-            Bind to a value on a field such as **name** ("Account Name" column)  
+            Bind to a value on a field as you want such as **name** ("Account Name" column)  
 
             ![Property Keyword](../Images/ConfigureThePCFControlPropKeyword.png)
 

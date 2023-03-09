@@ -25,6 +25,10 @@
 
         ![New column](../Images/SettingUpNewColumn.png)
 
+1. Adding the column
+
+    - Add the column you created to a form of your model-driven app in Form Designer in Power Apps
+
 1. Configure the PCF control
     1. Go to the classic Form Designer in Power Apps
     1. Double click the field (or column) which you created above to show the "Field Properties" dialog
@@ -74,3 +78,5 @@
 
     1. Click "OK" button to close "Field Properties" dialog
     1. **Save** and **Publish** the form
+
+1. Open a form on which you added the control of a model-driven app, and check the control's behavior

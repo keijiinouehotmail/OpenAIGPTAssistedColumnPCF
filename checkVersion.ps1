@@ -12,10 +12,10 @@ $message = @('-> Version in Code', $VersionInCode) -join '  = '
 echo $message
 
 if(($SolutionVersion -eq $ManifestVersion) -and ($SolutionVersion -eq $VersionInCode)){
-  echo 'Version check succeeded'
+  echo 'Checking version succeeded'
   exit 0
 }else{
-  echo 'Version check failed'
+  echo 'Checking version failed'
   exit -1
 }
 

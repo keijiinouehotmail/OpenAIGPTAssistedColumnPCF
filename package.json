@@ -10,7 +10,7 @@
     "rebuild": "pcf-scripts rebuild",
     "start": "pcf-scripts start",
     "refreshTypes": "pcf-scripts refreshTypes",
-    "prebuild": "pwsh ./versionCheck.ps1"
+    "prebuild": "pwsh ./checkVersion.ps1"
   },
   "dependencies": {
     "@fluentui/react": "8.29.0",

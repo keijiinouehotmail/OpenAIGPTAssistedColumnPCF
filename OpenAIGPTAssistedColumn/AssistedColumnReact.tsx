@@ -35,6 +35,16 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
     setShowContextualMenu(true);
   }, []);
   const onHideContextualMenu = React.useCallback(() => setShowContextualMenu(false), []);
+  const [isHovering, setIsHovering] = React.useState(false);
+  const mouseEntered = () => {
+    console.log('mouseEntered');
+    setIsHovering(true);
+  };
+  const mouseLeft = () => {
+    console.log('mouseLeft');
+    setIsHovering(false);
+  };
+
   const callGPTService = async () => {
     try {
       setErrorMessage('');
@@ -110,7 +120,11 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
             setCurrentValueEdited(true);
             setCurrentValue(v ?? '');
           }}
-          value={currentValue} />
+          value={currentValue}
+          style={{ fontWeight: isHovering ? 'initial' : 'bold'}}
+          borderless={ isHovering ? false : true }
+          onMouseEnter={mouseEntered}
+          onMouseLeave={mouseLeft} />
       </div>
       <Stack horizontal>
         {!isResponseApplied && (

@@ -1,6 +1,7 @@
 # "OpenAI GPT Assisted Column" PCF control
 
-This PCF control can take advantage of the OpenAI GPT service to get an answer to record-by-record questions based on predefined patterns.
+This PCF control can take advantage of the OpenAI GPT service to get an answer to record-by-record questions based on predefined patterns.  
+This is using OpenAI Chat completions with "gpt-3.5-turbo" model.
 
 ## Usage
 

@@ -12,4 +12,3 @@ This is using OpenAI Chat completions with "gpt-3.5-turbo" model.
 ## How to install and configure
 
 - [How to install and configure OpenAI GPT Assisted Column (in English)](./Docs/SettingUp.md)
-- [OpenAI GPT Assisted Column のインストールおよび構成方法 (in Japanese)](./Docs/SettingUp.ja.md)

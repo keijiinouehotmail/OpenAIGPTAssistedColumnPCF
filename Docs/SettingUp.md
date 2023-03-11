@@ -1,5 +1,7 @@
 # How to install and configure OpenAI GPT Assisted Column
 
+[日本語はこちら (in Japanese)](./SettingUp.ja.md)
+
 ## Prerequisite
 
 - You have an OpenAI account in order to get API key.  

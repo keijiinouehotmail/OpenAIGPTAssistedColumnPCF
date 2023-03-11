@@ -21,7 +21,7 @@
 
     - Create new column in desired table such as the following.
 
-        - *Data type** should be "Multiple lines of text".
+        - **Data type** should be "Multiple lines of text".
         - **Format** should be "Text".
         - You can increase **Maximum character count**.
 

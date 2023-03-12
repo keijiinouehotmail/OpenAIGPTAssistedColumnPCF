@@ -48,7 +48,6 @@ export class OpenAIGPTService extends GPTService {
             }],
         });
         const completionContent = response.data!.choices[0]!.message!.content;
-        // console.log(completionContent);
         this.setCompletionResponse(this.removeFirstEmptyLines(completionContent) ?? '');
         this.setGetting(false);
     }

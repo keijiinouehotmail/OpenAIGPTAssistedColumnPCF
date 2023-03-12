@@ -40,6 +40,8 @@ export class OpenAIGPTAssistedColumn implements ComponentFramework.ReactControl<
             keyword: context.parameters.keyword.raw?.toString() || '',
             querySentence: context.parameters.querySentence.raw?.toString() || '',
             apiKeyOpenAI: context.parameters.apiKeyOpenAI.raw?.toString() || '',
+            apiKeyAzureOAI: context.parameters.apiKeyAzureOAI.raw?.toString() || '',
+            endpointURLAzureOAI: context.parameters.endpointURLAzureOAI.raw?.toString() || '',
             context: context,
             onApply: this.onApply.bind(this),
             version: this.version,

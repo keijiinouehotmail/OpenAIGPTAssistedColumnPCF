@@ -26,11 +26,12 @@
     <property name="apiKeyOpenAI" display-name-key="apiKeyOpenAI_Display_Key"
       description-key="apiKeyOpenAI_Desc_Key"
       of-type="SingleLine.Text" usage="input" required="false" />
-    <!-- Not yet implemented
-      <property name="apiKeyAzureOpenAI" display-name-key="API key for Azure OpenAI API"
-      description-key="The API key of your Azure OpenAI API account."
-      of-type="SingleLine.Text" usage="input" required="false" /> 
-    -->
+    <property name="apiKeyAzureOAI" display-name-key="apiKeyAzureOAI_Display_Key"
+      description-key="apiKeyAzureOAI_Desc_Key"
+      of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="endpointURLAzureOAI" display-name-key="endpointURLAzureOAI_Display_Key"
+      description-key="endpointURLAzureOAI_Desc_Key"
+      of-type="SingleLine.Text" usage="input" required="false" />
 
     <resources>
       <code path="index.ts" order="1" />

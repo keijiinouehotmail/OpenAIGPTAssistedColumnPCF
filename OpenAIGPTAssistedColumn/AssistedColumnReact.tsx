@@ -39,11 +39,9 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   const onHideContextualMenu = React.useCallback(() => setShowContextualMenu(false), []);
   const [isHovering, setIsHovering] = React.useState(false);
   const mouseEntered = () => {
-    console.log('mouseEntered');
     setIsHovering(true);
   };
   const mouseLeft = () => {
-    console.log('mouseLeft');
     setIsHovering(false);
   };
 

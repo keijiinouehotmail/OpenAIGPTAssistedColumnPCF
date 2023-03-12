@@ -1,7 +1,8 @@
 import * as React from 'react';
 import * as openai from 'openai';
+import { GPTService } from './GPTService';
 
-export class OpenAIGPTService {
+export class OpenAIGPTService extends GPTService {
     apiKeyOpenAI: string;
     qsFilled: string;
     setCompletionResponse: React.Dispatch<React.SetStateAction<string>>;
@@ -12,6 +13,13 @@ export class OpenAIGPTService {
         setCompletionResponse: React.Dispatch<React.SetStateAction<string>>,
         setGetting: React.Dispatch<React.SetStateAction<boolean>>,
     ) {
+        super(
+            apiKeyOpenAI,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+        );
+        
         this.apiKeyOpenAI = apiKeyOpenAI;
         this.qsFilled = qsFilled;
         this.setCompletionResponse = setCompletionResponse;

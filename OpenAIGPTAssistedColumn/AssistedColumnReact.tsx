@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ContextualMenu, IContextualMenuItem, Label, PrimaryButton, ProgressIndicator, Stack, TextField } from '@fluentui/react';
-import { OpenAIGPTService } from './OpenAIGPTService';
+import { OpenAIGPTService } from './services/OpenAIGPTService';
 import { IInputs } from './generated/ManifestTypes';
-import { AzureOAIGPTService } from './AzureOAIGPTService';
+import { AzureOAIGPTService } from './services/AzureOAIGPTService';
 
 export interface IAssistedColumnReactProps {
   currentValue?: string;
@@ -50,13 +50,23 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   const callGPTService = async () => {
     try {
       setErrorMessage('');
-      const gptService = new AzureOAIGPTService(
-        props.apiKeyAzureOAI!,
-        props.endpointURLAzureOAI!,
-        qsFilled,
-        setCompletionResponse,
-        setGetting,
-      );
+      let gptService;
+      if (props.apiKeyOpenAI)
+        gptService = new OpenAIGPTService(
+          props.apiKeyOpenAI!,
+          qsFilled,
+          setCompletionResponse,
+          setGetting,
+        );
+      else
+        gptService = new AzureOAIGPTService(
+          props.apiKeyAzureOAI!,
+          props.endpointURLAzureOAI!,
+          qsFilled,
+          setCompletionResponse,
+          setGetting,
+        );
+
       await gptService.getAndSetOpenAICompletion();
     } catch (e: any) {
       setGetting(false);

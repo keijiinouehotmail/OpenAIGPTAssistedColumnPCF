@@ -3,8 +3,9 @@ import * as React from 'react';
 // So at this time this code is using axios.
 // import * as openai from 'openai';
 import axios from 'axios';
+import { GPTService } from './GPTService';
 
-export class AzureOAIGPTService {
+export class AzureOAIGPTService extends GPTService {
     apiKeyOpenAI: string;
     qsFilled: string;
     endpointURLAzureOAI: string;
@@ -17,6 +18,13 @@ export class AzureOAIGPTService {
         setCompletionResponse: React.Dispatch<React.SetStateAction<string>>,
         setGetting: React.Dispatch<React.SetStateAction<boolean>>,
     ) {
+        super(
+            apiKeyOpenAI,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+        );
+
         this.apiKeyOpenAI = apiKeyOpenAI;
         this.endpointURLAzureOAI = endpointURLAzureOAI;
         this.qsFilled = qsFilled;

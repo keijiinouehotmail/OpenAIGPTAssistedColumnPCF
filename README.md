@@ -12,3 +12,7 @@ This is using OpenAI Chat completions with "gpt-3.5-turbo" model.
 ## How to install and configure
 
 - [How to install and configure OpenAI GPT Assisted Column (in English)](./Docs/SettingUp.md)
+
+## Considerations
+
+This control uses the "gpt-3.5-turbo" model, but for use cases like this control, the use of that model may not be optimal. This control uses this model as one example of a use case where the "GPT-3.5-Turbo" model can be used.  

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-    <!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -61,76 +61,76 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-        <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-        <xsd:element name="root" msdata:IsDataSet="true">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
             <xsd:complexType>
-                <xsd:choice maxOccurs="unbounded">
-                    <xsd:element name="metadata">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                            </xsd:sequence>
-                            <xsd:attribute name="name" use="required" type="xsd:string" />
-                            <xsd:attribute name="type" type="xsd:string" />
-                            <xsd:attribute name="mimetype" type="xsd:string" />
-                            <xsd:attribute ref="xml:space" />
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="assembly">
-                        <xsd:complexType>
-                            <xsd:attribute name="alias" type="xsd:string" />
-                            <xsd:attribute name="name" type="xsd:string" />
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="data">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"
-                                    msdata:Ordinal="1" />
-                                <xsd:element name="comment" type="xsd:string" minOccurs="0"
-                                    msdata:Ordinal="2" />
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required"
-                                msdata:Ordinal="1" />
-                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                            <xsd:attribute ref="xml:space" />
-                        </xsd:complexType>
-                    </xsd:element>
-                    <xsd:element name="resheader">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="value" type="xsd:string" minOccurs="0"
-                                    msdata:Ordinal="1" />
-                            </xsd:sequence>
-                            <xsd:attribute name="name" type="xsd:string" use="required" />
-                        </xsd:complexType>
-                    </xsd:element>
-                </xsd:choice>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
-        </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
-        <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
-        <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0,
-            Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0,
-            Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <data name="OpenAIGPTAssistedColumn_Display_Key" xml:space="preserve">
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"
+                  msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0"
+                  msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"
+                msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"
+                  msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0,
+      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0,
+      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OpenAIGPTAssistedColumn_Display_Key" xml:space="preserve">
     <value>OpenAIGPTAssistedColumn</value>
     <comment>In manifest</comment>
   </data>
-    <data name="OpenAIGPTAssistedColumn_Desc_Key" xml:space="preserve">
+  <data name="OpenAIGPTAssistedColumn_Desc_Key" xml:space="preserve">
     <value>This control gets a completion from OpenAI GPT.</value>
     <comment>In manifest</comment>
   </data>
@@ -138,7 +138,7 @@
     <value>Assisted column</value>
     <comment>In manifest</comment>
   </data>
-    <data name="assistedColumn_Desc_Key" xml:space="preserve">
+  <data name="assistedColumn_Desc_Key" xml:space="preserve">
     <value>The assisted column which receives value from GPT</value>
     <comment>In manifest</comment>
   </data>
@@ -146,7 +146,7 @@
     <value>Keyword</value>
     <comment>In manifest</comment>
   </data>
-    <data name="keyword_Desc_Key" xml:space="preserve">
+  <data name="keyword_Desc_Key" xml:space="preserve">
     <value>The column which contains keyword to be used in the query sentence</value>
     <comment>In manifest</comment>
   </data>
@@ -154,11 +154,11 @@
     <value>Query sentence</value>
     <comment>In manifest</comment>
   </data>
-    <data name="querySentence_Desc_Key" xml:space="preserve">
+  <data name="querySentence_Desc_Key" xml:space="preserve">
     <value>The query sentence for GPT such as - What is strengths of ${} as a company? Pleaes use ${} to represent the text of the Keyword field you set above.</value>
     <comment>In manifest</comment>
   </data>
-    <data name="apiKeyOpenAI_Display_Key" xml:space="preserve">
+  <data name="apiKeyOpenAI_Display_Key" xml:space="preserve">
     <value>API key for OpenAI API</value>
     <comment>In manifest</comment>
   </data>
@@ -166,7 +166,23 @@
     <value>The API key of your OpenAI API account.</value>
     <comment>In manifest</comment>
   </data>
-    <data name="CalltheGPTservice" xml:space="preserve">
+  <data name="apiKeyAzureOAI_Display_Key" xml:space="preserve">
+    <value>API key for Azure OpenAI API</value>
+    <comment>In manifest</comment>
+  </data>
+  <data name="apiKeyAzureOAI_Desc_Key" xml:space="preserve">
+    <value>The API key of your Azure OpenAI API resource.</value>
+    <comment>In manifest</comment>
+  </data>
+  <data name="endpointURLAzureOAI_Display_Key" xml:space="preserve">
+    <value>Endpoint URL for your gpt-35-turbo model</value>
+    <comment>In code</comment>
+  </data>
+  <data name="endpointURLAzureOAI_Desc_Key" xml:space="preserve">
+    <value>Enter the endpoint URL for your gpt-35-turbo model of Azure OpenAI API resource like 'https://{your-resource-name}.openai.azure.com/openai/deployments/{your-model-name}/completions?api-version=2022-12-01'</value>
+    <comment>In code</comment>
+  </data>  
+  <data name="CalltheGPTservice" xml:space="preserve">
     <value>Call the GPT service</value>
     <comment>In code</comment>
   </data>
@@ -194,8 +210,16 @@
     <value>Error</value>
     <comment>In code</comment>
   </data>
-  <data name="OpenAIAPIkeyisnotset" xml:space="preserve">
-    <value>OpenAI API key is not set.</value>
+  <data name="NeitherOfOpenAIAPIkeyisset" xml:space="preserve">
+    <value>Neither OpenAI API key is set.</value>
+    <comment>In code</comment>
+  </data>
+  <data name="BothOfOpenAIAPIkeyareset" xml:space="preserve">
+    <value>Both of OpenAI API key are set. Please set one of them.</value>
+    <comment>In code</comment>
+  </data>
+  <data name="EndpointURLforAzureOpenAIisnotset" xml:space="preserve">
+    <value>Endpoint URL for Azure OpenAI API is not set.</value>
     <comment>In code</comment>
   </data>
   <data name="QuerySentenceisnotset" xml:space="preserve">

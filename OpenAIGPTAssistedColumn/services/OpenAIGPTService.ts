@@ -1,7 +1,8 @@
 import * as React from 'react';
 import * as openai from 'openai';
+import { GPTService } from './GPTService';
 
-export class GPTService {
+export class OpenAIGPTService extends GPTService {
     apiKeyOpenAI: string;
     qsFilled: string;
     setCompletionResponse: React.Dispatch<React.SetStateAction<string>>;
@@ -12,6 +13,13 @@ export class GPTService {
         setCompletionResponse: React.Dispatch<React.SetStateAction<string>>,
         setGetting: React.Dispatch<React.SetStateAction<boolean>>,
     ) {
+        super(
+            apiKeyOpenAI,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+        );
+        
         this.apiKeyOpenAI = apiKeyOpenAI;
         this.qsFilled = qsFilled;
         this.setCompletionResponse = setCompletionResponse;
@@ -25,6 +33,7 @@ export class GPTService {
         const api = new openai.OpenAIApi(configuration);
         const response = await api.createChatCompletion({
             model: "gpt-3.5-turbo",
+            max_tokens: 4000,
             temperature: 0.9,
             top_p: 1,
             frequency_penalty: 0,

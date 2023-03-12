@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { ContextualMenu, IContextualMenuItem, Label, PrimaryButton, ProgressIndicator, Stack, TextField } from '@fluentui/react';
-import { GPTService } from './GPTService';
+import { OpenAIGPTService } from './services/OpenAIGPTService';
 import { IInputs } from './generated/ManifestTypes';
+import { AzureOAIGPTService } from './services/AzureOAIGPTService';
 
 export interface IAssistedColumnReactProps {
   currentValue?: string;
   keyword?: string;
   querySentence?: string; // This contains ${} as a placeholder for the keyword.
   apiKeyOpenAI?: string;
-  // apiKeyAzureOpenAI?: string; // Not yet implemented
+  apiKeyAzureOAI?: string;
+  endpointURLAzureOAI?: string;
   context: ComponentFramework.Context<IInputs>;
   onApply?: (newValue: string) => void;
   version: string;
@@ -48,12 +50,23 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   const callGPTService = async () => {
     try {
       setErrorMessage('');
-      const gptService = new GPTService(
-        props.apiKeyOpenAI!,
-        qsFilled,
-        setCompletionResponse,
-        setGetting,
-      );
+      let gptService;
+      if (props.apiKeyOpenAI)
+        gptService = new OpenAIGPTService(
+          props.apiKeyOpenAI!,
+          qsFilled,
+          setCompletionResponse,
+          setGetting,
+        );
+      else
+        gptService = new AzureOAIGPTService(
+          props.apiKeyAzureOAI!,
+          props.endpointURLAzureOAI!,
+          qsFilled,
+          setCompletionResponse,
+          setGetting,
+        );
+
       await gptService.getAndSetOpenAICompletion();
     } catch (e: any) {
       setGetting(false);
@@ -121,18 +134,20 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
             setCurrentValue(v ?? '');
           }}
           value={currentValue}
-          style={{ fontWeight: isHovering ? 'initial' : 'bold'}}
-          borderless={ isHovering ? false : true }
+          style={{ fontWeight: isHovering ? 'initial' : 'bold' }}
+          borderless={isHovering ? false : true}
           onMouseEnter={mouseEntered}
           onMouseLeave={mouseLeft} />
       </div>
       <Stack horizontal>
-        {!isResponseApplied && (
-          <PrimaryButton style={indentButtonStyle} onClick={callGPTService}>{props.context.resources.getString('CalltheGPTservice')}</PrimaryButton>
-        )}
-        {currentValueEdited && (
-          <PrimaryButton style={indentButtonStyle} onClick={applyEdited}>{props.context.resources.getString('Applyeditedvalue')}</PrimaryButton>
-        )}
+        {
+          !isResponseApplied && (
+            <PrimaryButton style={indentButtonStyle} onClick={callGPTService}>{props.context.resources.getString('CalltheGPTservice')}</PrimaryButton>
+          )}
+        {
+          currentValueEdited && (
+            <PrimaryButton style={indentButtonStyle} onClick={applyEdited}>{props.context.resources.getString('Applyeditedvalue')}</PrimaryButton>
+          )}
       </Stack>
       {
         isGetting && !isResponseApplied && (
@@ -209,8 +224,12 @@ const getQSFilledStyled = (querySentence: string, delimiter: string, keyword: st
 };
 
 const getValidationMessage = (props: IAssistedColumnReactProps, qsFilled: string) => {
-  if (!props.apiKeyOpenAI) {
-    return props.context.resources.getString('OpenAIAPIkeyisnotset');
+  if (!props.apiKeyOpenAI && !props.apiKeyAzureOAI) {
+    return props.context.resources.getString('NeitherOfOpenAIAPIkeyisset');
+  } else if (props.apiKeyOpenAI && props.apiKeyAzureOAI) {
+    return props.context.resources.getString('BothOfOpenAIAPIkeyareset');
+  } else if (!props.apiKeyOpenAI && !(props.apiKeyAzureOAI && props.endpointURLAzureOAI)) {
+    return props.context.resources.getString('EndpointURLforAzureOpenAIisnotset');
   } else if (!qsFilled) {
     return props.context.resources.getString('QuerySentenceisnotset');
   }

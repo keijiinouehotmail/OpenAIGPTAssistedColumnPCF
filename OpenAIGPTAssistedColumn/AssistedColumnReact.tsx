@@ -44,6 +44,7 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   const mouseLeft = () => {
     setIsHovering(false);
   };
+  const serviceProvider = (props.apiKeyOpenAI) ? 'OpenAI' : 'Azure OpenAI';
 
   const callGPTService = async () => {
     try {
@@ -140,7 +141,7 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
       <Stack horizontal>
         {
           !isResponseApplied && (
-            <PrimaryButton style={indentButtonStyle} onClick={callGPTService}>{props.context.resources.getString('CalltheGPTservice')}</PrimaryButton>
+            <PrimaryButton style={indentButtonStyle} onClick={callGPTService}>{`${props.context.resources.getString('CalltheGPTservice')} (${serviceProvider})`}</PrimaryButton>
           )}
         {
           currentValueEdited && (

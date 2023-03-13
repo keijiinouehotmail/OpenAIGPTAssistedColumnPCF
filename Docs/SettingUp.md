@@ -45,7 +45,7 @@
 
         ![Web Phone Tablet](../Images/ConfigureThePCFControlWebPhoneTablet.png)
 
-    1. Set three properties:
+    1. Set three or four properties:
         1. **Keyword**
 
             This is for a keyword used in Query sentence later.  
@@ -66,13 +66,32 @@
 
         1. **API key for OpenAI API**
 
-            This is a API Key for OpenAI API of your OpenAI account.  
+            This is a API key for OpenAI API of your OpenAI account.  
+            When you use Azure OpenAI service, skip this step.  
             You can generate API Key in the following page.  
                 <https://platform.openai.com/account/api-keys>  
 
             ![Property API key for OpenAI API](../Images/ConfigureThePCFControlPropAPIKeyForOpenAIAPI.png)
 
-        1. Now setting of three properties was completed
+        1. **API key for Azure OpenAI resource**
+
+            This is API key for your Azure OpenAI resource.  
+            You can find the key in Key and Endpoint blade in your Azure OpenAI resource page.  
+
+            ![Property API key for Azure OpenAI API](../Images/ConfigureThePCFControlPropAPIKeyForAzureOAIAPI.png)
+
+        1. **Endpoint URL for your gpt-35-turbo model of Azure OpenAI resource**
+
+            Enter the endpoint url for your gpt-35-turbo model of Azure OpenAI resource.  
+            This is a text like the following. Change {your-resource-name} and {your-model-deployment-name}.  
+
+            ```text
+            https://{your-resource-name}.openai.azure.com/openai/deployments/{your-model-deployment-name}/completions?api-version=2022-12-01
+            ```
+
+            ![Property Endpoint URL Azure OpenAI](../Images/ConfigureThePCFControlPropEndpointURLAzureOAI.png)
+
+        1. Now setting for all properties was completed
 
     1. You can turn "**Display label on the form**" off in "Display" tab
 

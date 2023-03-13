@@ -167,19 +167,19 @@
     <comment>In manifest</comment>
   </data>
   <data name="apiKeyAzureOAI_Display_Key" xml:space="preserve">
-    <value>API key for Azure OpenAI API</value>
+    <value>API key for Azure OpenAI resource</value>
     <comment>In manifest</comment>
   </data>
   <data name="apiKeyAzureOAI_Desc_Key" xml:space="preserve">
-    <value>The API key of your Azure OpenAI API resource.</value>
+    <value>The API key of your Azure OpenAI resource.</value>
     <comment>In manifest</comment>
   </data>
   <data name="endpointURLAzureOAI_Display_Key" xml:space="preserve">
-    <value>Endpoint URL for your gpt-35-turbo model</value>
+    <value>Endpoint URL for your gpt-35-turbo model of Azure OpenAI resource</value>
     <comment>In code</comment>
   </data>
   <data name="endpointURLAzureOAI_Desc_Key" xml:space="preserve">
-    <value>Enter the endpoint URL for your gpt-35-turbo model of Azure OpenAI API resource like 'https://{your-resource-name}.openai.azure.com/openai/deployments/{your-model-name}/completions?api-version=2022-12-01'</value>
+    <value>Enter the endpoint URL for your gpt-35-turbo model of Azure OpenAI API resource like 'https://{your-resource-name}.openai.azure.com/openai/deployments/{your-model-deployment-name}/completions?api-version=2022-12-01'</value>
     <comment>In code</comment>
   </data>  
   <data name="CalltheGPTservice" xml:space="preserve">

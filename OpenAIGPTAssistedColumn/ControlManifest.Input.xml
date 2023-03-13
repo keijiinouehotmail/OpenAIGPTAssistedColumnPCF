@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
   <control namespace="OpenAIGPTAssistedColumnNS" constructor="OpenAIGPTAssistedColumn"
-    version="1.0.4"
+    version="1.0.5"
     display-name-key="OpenAIGPTAssistedColumn_Display_Key"
     description-key="OpenAIGPTAssistedColumn_Desc_Key"
     control-type="virtual">

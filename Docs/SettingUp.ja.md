@@ -45,7 +45,7 @@
 
         ![Web Phone Tablet](../Images/ConfigureThePCFControlWebPhoneTablet.ja.png)
 
-    1. 3つのプロパティを設定します:
+    1. 3つ、あるいは4つのプロパティを設定します:
         1. **キーワード**
 
             これは後の 尋ねる文章 で使用されるキーワードのためのものです。  
@@ -65,15 +65,34 @@
 
             ![Property Query sentence](../Images/ConfigureThePCFControlPropQuerySentence.ja.png)
 
-        1. **API key for OpenAI API**
+        1. **OpenAI API の API key**
 
-            これはあなたの OpenAI アカウントの OpenAI API のための API Key です。  
+            これはあなたの OpenAI アカウントの OpenAI API のための API key です。  
+            Azure OpenAI サービスを利用している場合にはスキップしてください。  
             以下のページで API Key を生成できます。  
                 <https://platform.openai.com/account/api-keys>  
 
             ![Property API key for OpenAI API](../Images/ConfigureThePCFControlPropAPIKeyForOpenAIAPI.ja.png)
 
-        1. ここまでで、3つのプロパティの設定が完了しました
+        1. **Azure OpenAI リソースの API key**
+
+            これはあなたの Azure OpenAI リソースの API key です。  
+            Azure portal で Azure OpenAI リソースを表示してリソース管理の中の キーとエンドポイント ブレードにて key を表示できます。  
+
+            ![Property API key for Azure OpenAI API](../Images/ConfigureThePCFControlPropAPIKeyForAzureOAIAPI.ja.png)
+
+        1. **Azure OpenAI リソース の gpt-35-turbo モデルのエンドポイント URL**
+
+            Azure OpenAI API リソースの gpt-35-turbo モデルのエンドポイント URL を入力してください。  
+            以下のような文字列です。{リソースの名前} と {モデル デプロイメントの名前} を適時変更ください。  
+
+            ```text
+            https://{リソースの名前}.openai.azure.com/openai/deployments/{モデル デプロイメントの名前}/completions?api-version=2022-12-01
+            ```
+
+            ![Property Endpoint URL Azure OpenAI](../Images/ConfigureThePCFControlPropEndpointURLAzureOAI.ja.png)
+
+        1. ここまでで、すべてのプロパティの設定が完了しました
 
     1. "表示" タブにて、"**フォームでラベルを表示する**" をオフに設定できます
 

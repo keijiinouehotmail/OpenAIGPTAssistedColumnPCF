@@ -3,7 +3,7 @@ import * as React from 'react';
 // So at this time this code is using axios.
 // import * as openai from 'openai';
 import axios from 'axios';
-import { GPTService } from './GPTService';
+import { GPTService, IGPTMessage } from './GPTService';
 
 export class AzureOAIGPTService extends GPTService {
     apiKeyOpenAI: string;
@@ -31,7 +31,37 @@ export class AzureOAIGPTService extends GPTService {
         this.setCompletionResponse = setCompletionResponse;
         this.setGetting = setGetting;
     }
+    // This function works with api-version=2023-03-15-preview
     async getAndSetOpenAICompletion() {
+        this.setGetting(true);
+        const _messages: IGPTMessage[] = [];
+        _messages.push({ "role": "system", "content": "You are a helpful assistant." });
+        _messages.push({ "role": "user", "content": this.qsFilled })
+        const response = await axios({
+            method: 'post',
+            url: this.endpointURLAzureOAI,
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': this.apiKeyOpenAI,
+            },
+            data:
+            {
+                "messages": _messages,
+                "max_tokens": 4000,
+                "temperature": 0.9,
+                "frequency_penalty": 0,
+                "presence_penalty": 0,
+                "top_p": 1,
+                "stop": null,
+            },
+        });
+
+        const completionContent = response.data!.choices[0]!.message.content;
+        this.setCompletionResponse(completionContent);
+        this.setGetting(false);
+    }
+    // This function works with api-version=2022-12-01
+    async getAndSetOpenAICompletion20221201() {
         this.setGetting(true);
         const response = await axios({
             method: 'post',

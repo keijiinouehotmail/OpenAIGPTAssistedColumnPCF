@@ -3,6 +3,8 @@ import { ContextualMenu, IContextualMenuItem, Label, PrimaryButton, ProgressIndi
 import { OpenAIGPTService } from './services/OpenAIGPTService';
 import { IInputs } from './generated/ManifestTypes';
 import { AzureOAIGPTService } from './services/AzureOAIGPTService';
+import { OpenAIGPTStreamService } from './services/OpenAIGPTStreamService';
+import { AzureOAIGPTStreamService } from './services/AzureOAIGPTStreamService';
 
 export interface IAssistedColumnReactProps {
   currentValue?: string;
@@ -11,6 +13,7 @@ export interface IAssistedColumnReactProps {
   apiKeyOpenAI?: string;
   apiKeyAzureOAI?: string;
   endpointURLAzureOAI?: string;
+  stream: boolean;
   context: ComponentFramework.Context<IInputs>;
   onApply?: (newValue: string) => void;
   version: string;
@@ -44,27 +47,47 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   const mouseLeft = () => {
     setIsHovering(false);
   };
-  const serviceProvider = (props.apiKeyOpenAI) ? 'OpenAI' : 'Azure OpenAI';
+  const serviceProvider = (props.apiKeyOpenAI) ? 
+    ((props.stream) ? 'OpenAI(stream)' : 'OpenAI') : 
+    ((props.stream) ? 'Azure OpenAI(stream)' : 'Azure OpenAI');
 
   const callGPTService = async () => {
     try {
       setErrorMessage('');
       let gptService;
-      if (props.apiKeyOpenAI)
-        gptService = new OpenAIGPTService(
-          props.apiKeyOpenAI!,
-          qsFilled,
-          setCompletionResponse,
-          setGetting,
-        );
+      if (props.apiKeyOpenAI) {
+        if (props.stream)
+          gptService = new OpenAIGPTStreamService(
+            props.apiKeyOpenAI!,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+          );
+        else
+          gptService = new OpenAIGPTService(
+            props.apiKeyOpenAI!,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+          );
+      }
       else
-        gptService = new AzureOAIGPTService(
-          props.apiKeyAzureOAI!,
-          props.endpointURLAzureOAI!,
-          qsFilled,
-          setCompletionResponse,
-          setGetting,
-        );
+        if (props.stream)
+          gptService = new AzureOAIGPTStreamService(
+            props.apiKeyAzureOAI!,
+            props.endpointURLAzureOAI!,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+          );
+        else
+          gptService = new AzureOAIGPTService(
+            props.apiKeyAzureOAI!,
+            props.endpointURLAzureOAI!,
+            qsFilled,
+            setCompletionResponse,
+            setGetting,
+          );
 
       await gptService.getAndSetOpenAICompletion();
     } catch (e: any) {
@@ -94,7 +117,7 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
   return (
     <Stack horizontalAlign="start" style={{ width: '100%' }}>
       <div style={{ position: 'relative', width: '100%', fontSize: 'small' }}>
-        <a ref={linkRef} onClick={onShowContextualMenu} href="#" style={{ position: 'absolute', right: '0' }}>
+        <a ref={linkRef} onClick={onShowContextualMenu} href="#" style={{ position: 'absolute', right: '0px' }}>
           {props.context.resources.getString('About')}</a>
         <ContextualMenu
           items={[
@@ -170,11 +193,18 @@ export const AssistedColumnReact = React.memo<IAssistedColumnReactProps>(functio
               multiline rows={10}
               readOnly
               value={completionResponse} />
+            {!isGetting && (
+              <div style={{ position: 'relative', width: '100%' }}>
+                <div style={{ position: 'absolute', right: '0px', fontSize: 'small' }}>
+                  {props.context.resources.getString('TheAIsanswermaybeincorrect')}
+                </div>
+              </div>
+            )}
           </div>
         )
       }
       {
-        completionResponse && !isResponseApplied && (
+        completionResponse && !isGetting && !isResponseApplied && (
           <PrimaryButton style={indentButtonStyle} onClick={apply}>{props.context.resources.getString('Applythisresponse')}</PrimaryButton>
         )
       }

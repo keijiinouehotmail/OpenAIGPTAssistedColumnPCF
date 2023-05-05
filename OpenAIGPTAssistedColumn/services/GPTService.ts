@@ -1,5 +1,10 @@
 import * as React from "react";
 
+export interface IGPTMessage {
+    "role": string;
+    "content": string;
+}
+
 export abstract class GPTService {
     constructor(
         apiKeyOpenAI: string,

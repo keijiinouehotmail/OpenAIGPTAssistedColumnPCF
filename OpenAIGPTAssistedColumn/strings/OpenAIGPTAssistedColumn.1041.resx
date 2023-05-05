@@ -179,7 +179,15 @@
     <comment>In code</comment>
   </data>
   <data name="endpointURLAzureOAI_Desc_Key" xml:space="preserve">
-    <value>Azure OpenAI API リソースの gpt-35-turbo モデルのエンドポイント URL を入力してください。例： 'https://{リソースの名前}.openai.azure.com/openai/deployments/{モデル デプロイメントの名前}/completions?api-version=2022-12-01'</value>
+    <value>Azure OpenAI API リソースの gpt-35-turbo モデルのエンドポイント URL を入力してください。例： 'https://{リソースの名前}.openai.azure.com/openai/deployments/{モデル デプロイメントの名前}/completions?api-version=2023-03-15-preview'</value>
+    <comment>In code</comment>
+  </data>  
+  <data name="stream_Display_Key" xml:space="preserve">
+    <value>Stream で回答を取得するかどうか</value>
+    <comment>In code</comment>
+  </data>
+  <data name="stream_Desc_Key" xml:space="preserve">
+    <value>Stream で回答を取得したい場合には 'true' を入力してください。そうでない場合には、空のままにしてください。</value>
     <comment>In code</comment>
   </data>  
   <data name="CalltheGPTservice" xml:space="preserve">
@@ -236,6 +244,10 @@
   </data>
   <data name="Webpageofthiscontrol" xml:space="preserve">
     <value>このコントロールの Web ページ</value>
+    <comment>In code</comment>
+  </data>
+  <data name="TheAIsanswermaybeincorrect" xml:space="preserve">
+    <value>AI の回答は誤っている可能性があります。</value>
     <comment>In code</comment>
   </data>
 </root>

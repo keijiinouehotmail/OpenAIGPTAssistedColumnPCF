@@ -8,7 +8,7 @@
 ##   - Manifest version for the control in "ControlManifest.Input.xml" file
 ##   - Readonly variable used in code of "index.ts" file
 ## 
-## This script assumes the version string is such as "1.0.4" which doesn't include 
+## This script assumes the version string is such as "1.0.5" which doesn't include 
 ## characters.
 ## This script assumes to be used in package.json for "prebuild" script to be executed 
 ## just before the "build" script by listing as the following:
@@ -23,7 +23,10 @@
 
 echo 'Checking version string in several files for OpenAIGPTAssistedColumnPCF'
 $SolutionVersion = ((Get-Content .\OpenAIGPTAssistedColumn\Solutions\src\Other\Solution.xml | Select-String -Pattern '<Version>') -replace '^ *<Version>', '') -replace '[^0-9\.]', ''
-$message = @('-> Solution Version', $SolutionVersion) -join ' = '
+$SolutionVersionSplitted = $SolutionVersion.Split('.')
+$SolutionVersionIncremented = $SolutionVersionSplitted[0] + '.' + $SolutionVersionSplitted[1] + '.' + ([int]$SolutionVersionSplitted[2])
+$messageIncremented = @('-> Solution Version Incremented', $SolutionVersionIncremented) -join ' = '
+$message = @('-> Solution Version = ', $SolutionVersion, ' will be incremented as Solution Version = ', $SolutionVersionIncremented) -join ''
 echo $message
 
 $ManifestVersion = ((Get-Content .\OpenAIGPTAssistedColumn\ControlManifest.Input.xml | Select-String -Pattern 'version')[1] -replace '^ *version', '') -replace '[^0-9\.]', ''
@@ -34,7 +37,7 @@ $VersionInCode =((Get-Content .\OpenAIGPTAssistedColumn\index.ts | Select-String
 $message = @('-> Version in Code', $VersionInCode) -join '  = '
 echo $message
 
-if(($SolutionVersion -eq $ManifestVersion) -and ($SolutionVersion -eq $VersionInCode)){
+if(($SolutionVersionIncremented -eq $ManifestVersion) -and ($SolutionVersionIncremented -eq $VersionInCode)){
   echo 'Checking version succeeded'
   exit 0
 }else{

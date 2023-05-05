@@ -91,6 +91,10 @@
 
             ![Property Endpoint URL Azure OpenAI](../Images/ConfigureThePCFControlPropEndpointURLAzureOAI.png)
 
+        1. **Stream**
+
+            Enter 'true' when you want to get response by stream. Otherwise leave empty.
+
         1. Now setting for all properties was completed
 
     1. You can turn "**Display label on the form**" off in "Display" tab

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
   <control namespace="OpenAIGPTAssistedColumnNS" constructor="OpenAIGPTAssistedColumn"
-    version="1.0.5"
+    version="1.0.7"
     display-name-key="OpenAIGPTAssistedColumn_Display_Key"
     description-key="OpenAIGPTAssistedColumn_Desc_Key"
     control-type="virtual">
@@ -31,6 +31,9 @@
       of-type="SingleLine.Text" usage="input" required="false" />
     <property name="endpointURLAzureOAI" display-name-key="endpointURLAzureOAI_Display_Key"
       description-key="endpointURLAzureOAI_Desc_Key"
+      of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="stream" display-name-key="stream_Display_Key"
+      description-key="stream_Desc_Key"
       of-type="SingleLine.Text" usage="input" required="false" />
 
     <resources>

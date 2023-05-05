@@ -92,6 +92,10 @@
 
             ![Property Endpoint URL Azure OpenAI](../Images/ConfigureThePCFControlPropEndpointURLAzureOAI.ja.png)
 
+        1. **Stream**
+
+            Stream で回答を取得したい場合には 'true' を入力してください。そうでない場合には、空のままにしてください。
+
         1. ここまでで、すべてのプロパティの設定が完了しました
 
     1. "表示" タブにて、"**フォームでラベルを表示する**" をオフに設定できます
